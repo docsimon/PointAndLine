@@ -15,6 +15,8 @@
 		CA4C00572503B373006B9ACE /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = CA4C00552503B373006B9ACE /* LaunchScreen.storyboard */; };
 		CA4C00622503B373006B9ACE /* PointAndLineTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = CA4C00612503B373006B9ACE /* PointAndLineTests.swift */; };
 		CA4C006E2503C0AE006B9ACE /* DataModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = CA4C006D2503C0AE006B9ACE /* DataModel.swift */; };
+		CA4C00702503C2DA006B9ACE /* LineRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = CA4C006F2503C2DA006B9ACE /* LineRepository.swift */; };
+		CA4C00722503E80B006B9ACE /* LineRepositoryProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = CA4C00712503E80B006B9ACE /* LineRepositoryProtocol.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -40,6 +42,8 @@
 		CA4C00612503B373006B9ACE /* PointAndLineTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PointAndLineTests.swift; sourceTree = "<group>"; };
 		CA4C00632503B373006B9ACE /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		CA4C006D2503C0AE006B9ACE /* DataModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataModel.swift; sourceTree = "<group>"; };
+		CA4C006F2503C2DA006B9ACE /* LineRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LineRepository.swift; sourceTree = "<group>"; };
+		CA4C00712503E80B006B9ACE /* LineRepositoryProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LineRepositoryProtocol.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -106,6 +110,8 @@
 			isa = PBXGroup;
 			children = (
 				CA4C006D2503C0AE006B9ACE /* DataModel.swift */,
+				CA4C006F2503C2DA006B9ACE /* LineRepository.swift */,
+				CA4C00712503E80B006B9ACE /* LineRepositoryProtocol.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -214,6 +220,8 @@
 				CA4C004F2503B371006B9ACE /* ViewController.swift in Sources */,
 				CA4C006E2503C0AE006B9ACE /* DataModel.swift in Sources */,
 				CA4C004B2503B371006B9ACE /* AppDelegate.swift in Sources */,
+				CA4C00722503E80B006B9ACE /* LineRepositoryProtocol.swift in Sources */,
+				CA4C00702503C2DA006B9ACE /* LineRepository.swift in Sources */,
 				CA4C004D2503B371006B9ACE /* SceneDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

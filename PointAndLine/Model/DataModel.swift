@@ -12,10 +12,14 @@ struct Point {
     let y: Double
 }
 
+struct LineCoordinates {
+    let startPoint: Point
+    let endPoint: Point
+}
+
 struct Line {
     let color: String
     let thick: Int
     let alpha: Double
-    let startPoint: Point
-    let endPoint: Point
+    let coordinates: LineCoordinates
 }
