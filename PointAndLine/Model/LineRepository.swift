@@ -14,10 +14,13 @@ class LineRepository {
     
     private var lines = [Line]()
     
-    private func getLastEndPoint() -> Point{
-        let lastLine = lines[lines.endIndex-1]
-        let lastPoint = lastLine.coordinates.endPoint
-        return lastPoint
+    private func getLastEndPoint() -> Point {
+        privateQueue.sync {
+            let lastLine = lines[lines.endIndex-1]
+            let lastPoint = lastLine.coordinates.endPoint
+            return lastPoint
+        }
+       
     }
     
     init(storage: StorageApiProtocol){
