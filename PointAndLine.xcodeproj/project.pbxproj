@@ -17,6 +17,7 @@
 		CA4C006E2503C0AE006B9ACE /* DataModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = CA4C006D2503C0AE006B9ACE /* DataModel.swift */; };
 		CA4C00702503C2DA006B9ACE /* LineRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = CA4C006F2503C2DA006B9ACE /* LineRepository.swift */; };
 		CA4C00722503E80B006B9ACE /* LineRepositoryProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = CA4C00712503E80B006B9ACE /* LineRepositoryProtocol.swift */; };
+		CA4C00742503E93B006B9ACE /* StorageApiProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = CA4C00732503E93B006B9ACE /* StorageApiProtocol.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -44,6 +45,7 @@
 		CA4C006D2503C0AE006B9ACE /* DataModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataModel.swift; sourceTree = "<group>"; };
 		CA4C006F2503C2DA006B9ACE /* LineRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LineRepository.swift; sourceTree = "<group>"; };
 		CA4C00712503E80B006B9ACE /* LineRepositoryProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LineRepositoryProtocol.swift; sourceTree = "<group>"; };
+		CA4C00732503E93B006B9ACE /* StorageApiProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StorageApiProtocol.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -112,6 +114,7 @@
 				CA4C006D2503C0AE006B9ACE /* DataModel.swift */,
 				CA4C006F2503C2DA006B9ACE /* LineRepository.swift */,
 				CA4C00712503E80B006B9ACE /* LineRepositoryProtocol.swift */,
+				CA4C00732503E93B006B9ACE /* StorageApiProtocol.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -221,6 +224,7 @@
 				CA4C006E2503C0AE006B9ACE /* DataModel.swift in Sources */,
 				CA4C004B2503B371006B9ACE /* AppDelegate.swift in Sources */,
 				CA4C00722503E80B006B9ACE /* LineRepositoryProtocol.swift in Sources */,
+				CA4C00742503E93B006B9ACE /* StorageApiProtocol.swift in Sources */,
 				CA4C00702503C2DA006B9ACE /* LineRepository.swift in Sources */,
 				CA4C004D2503B371006B9ACE /* SceneDelegate.swift in Sources */,
 			);
