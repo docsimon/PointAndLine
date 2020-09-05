@@ -7,9 +7,63 @@
 
 import Foundation
 
-protocol LineProtocol {
-    func lineCoordinates(initial: Point) -> Line
-    func setLineColor(coord: LineCoordinates)
-    func setLineThichness(coord: LineCoordinates)
-    func setLineAlpha(coord: LineCoordinates)
+class LineRepository {
+    
+    let storage: StorageApiProtocol
+    let privateQueue = DispatchQueue(label: "Private queue", attributes: .concurrent)
+    
+    private var lines = [Line]()
+    
+    private func getLastEndPoint() -> Point{
+        let lastLine = lines[lines.endIndex-1]
+        let lastPoint = lastLine.coordinates.endPoint
+        return lastPoint
+    }
+    
+    init(storage: StorageApiProtocol){
+        self.storage = storage
+    }
+}
+
+extension LineRepository: LineRepositoryProtocol {
+    func getLine(from endPoint: Point) -> Line {
+        let initialPoint = getLastEndPoint()
+        let line = Line(color: "", thick: 0, alpha: 0, coordinates: LineCoordinates(startPoint: initialPoint, endPoint: endPoint))
+        privateQueue.async(flags: .barrier) {
+            self.lines.append(line)
+        }
+        return line
+    }
+    
+    var getLines: [Line] {
+        return  privateQueue.sync{
+            self.lines
+        }
+    }
+    
+    func setLineColor(coord: LineCoordinates) {
+        
+    }
+    
+    func setLineThichness(coord: LineCoordinates) {
+        
+    }
+    
+    func setLineAlpha(coord: Line) {
+        
+    }
+    
+    func save(graph: [Line], result: (Result<Bool, Error>) -> Void) {
+        
+    }
+    
+    func save(line: Line, result: (Result<Bool, Error>) -> Void) {
+        
+    }
+    
+    func load() -> [Line] {
+        []
+    }
+    
+    
 }
