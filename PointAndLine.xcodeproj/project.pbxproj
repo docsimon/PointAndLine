@@ -14,6 +14,7 @@
 		CA4C00542503B373006B9ACE /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = CA4C00532503B373006B9ACE /* Assets.xcassets */; };
 		CA4C00572503B373006B9ACE /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = CA4C00552503B373006B9ACE /* LaunchScreen.storyboard */; };
 		CA4C00622503B373006B9ACE /* PointAndLineTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = CA4C00612503B373006B9ACE /* PointAndLineTests.swift */; };
+		CA4C006E2503C0AE006B9ACE /* DataModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = CA4C006D2503C0AE006B9ACE /* DataModel.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -38,6 +39,7 @@
 		CA4C005D2503B373006B9ACE /* PointAndLineTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = PointAndLineTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		CA4C00612503B373006B9ACE /* PointAndLineTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PointAndLineTests.swift; sourceTree = "<group>"; };
 		CA4C00632503B373006B9ACE /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		CA4C006D2503C0AE006B9ACE /* DataModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataModel.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -79,6 +81,7 @@
 		CA4C00492503B371006B9ACE /* PointAndLine */ = {
 			isa = PBXGroup;
 			children = (
+				CA4C006C2503C096006B9ACE /* Model */,
 				CA4C004A2503B371006B9ACE /* AppDelegate.swift */,
 				CA4C004C2503B371006B9ACE /* SceneDelegate.swift */,
 				CA4C004E2503B371006B9ACE /* ViewController.swift */,
@@ -97,6 +100,14 @@
 				CA4C00632503B373006B9ACE /* Info.plist */,
 			);
 			path = PointAndLineTests;
+			sourceTree = "<group>";
+		};
+		CA4C006C2503C096006B9ACE /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				CA4C006D2503C0AE006B9ACE /* DataModel.swift */,
+			);
+			path = Model;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -201,6 +212,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				CA4C004F2503B371006B9ACE /* ViewController.swift in Sources */,
+				CA4C006E2503C0AE006B9ACE /* DataModel.swift in Sources */,
 				CA4C004B2503B371006B9ACE /* AppDelegate.swift in Sources */,
 				CA4C004D2503B371006B9ACE /* SceneDelegate.swift in Sources */,
 			);
