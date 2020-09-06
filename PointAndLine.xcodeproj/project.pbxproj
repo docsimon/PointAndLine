@@ -19,6 +19,7 @@
 		CA4C00722503E80B006B9ACE /* LineRepositoryProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = CA4C00712503E80B006B9ACE /* LineRepositoryProtocol.swift */; };
 		CA4C00742503E93B006B9ACE /* StorageApiProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = CA4C00732503E93B006B9ACE /* StorageApiProtocol.swift */; };
 		CA4C00762503EAD5006B9ACE /* StorageApi.swift in Sources */ = {isa = PBXBuildFile; fileRef = CA4C00752503EAD5006B9ACE /* StorageApi.swift */; };
+		CA4C007A25052644006B9ACE /* MockStorageApi.swift in Sources */ = {isa = PBXBuildFile; fileRef = CA4C007825052628006B9ACE /* MockStorageApi.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -48,6 +49,7 @@
 		CA4C00712503E80B006B9ACE /* LineRepositoryProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LineRepositoryProtocol.swift; sourceTree = "<group>"; };
 		CA4C00732503E93B006B9ACE /* StorageApiProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StorageApiProtocol.swift; sourceTree = "<group>"; };
 		CA4C00752503EAD5006B9ACE /* StorageApi.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StorageApi.swift; sourceTree = "<group>"; };
+		CA4C007825052628006B9ACE /* MockStorageApi.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MockStorageApi.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -104,6 +106,7 @@
 		CA4C00602503B373006B9ACE /* PointAndLineTests */ = {
 			isa = PBXGroup;
 			children = (
+				CA4C007725052615006B9ACE /* Mocks */,
 				CA4C00612503B373006B9ACE /* PointAndLineTests.swift */,
 				CA4C00632503B373006B9ACE /* Info.plist */,
 			);
@@ -120,6 +123,14 @@
 				CA4C00752503EAD5006B9ACE /* StorageApi.swift */,
 			);
 			path = Model;
+			sourceTree = "<group>";
+		};
+		CA4C007725052615006B9ACE /* Mocks */ = {
+			isa = PBXGroup;
+			children = (
+				CA4C007825052628006B9ACE /* MockStorageApi.swift */,
+			);
+			path = Mocks;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -225,6 +236,7 @@
 			files = (
 				CA4C004F2503B371006B9ACE /* ViewController.swift in Sources */,
 				CA4C006E2503C0AE006B9ACE /* DataModel.swift in Sources */,
+				CA4C007A25052644006B9ACE /* MockStorageApi.swift in Sources */,
 				CA4C00762503EAD5006B9ACE /* StorageApi.swift in Sources */,
 				CA4C004B2503B371006B9ACE /* AppDelegate.swift in Sources */,
 				CA4C00722503E80B006B9ACE /* LineRepositoryProtocol.swift in Sources */,

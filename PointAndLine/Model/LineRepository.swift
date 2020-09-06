@@ -20,8 +20,8 @@ class LineRepository {
             let lastPoint = lastLine.coordinates.endPoint
             return lastPoint
         }
-       
     }
+    
     
     init(storage: StorageApiProtocol){
         self.storage = storage
@@ -30,8 +30,15 @@ class LineRepository {
 
 extension LineRepository: LineRepositoryProtocol {
     func getLine(from endPoint: Point) -> Line {
-        let initialPoint = getLastEndPoint()
-        let line = Line(color: "", thick: 0, alpha: 0, coordinates: LineCoordinates(startPoint: initialPoint, endPoint: endPoint))
+        let line: Line
+        if getLines.count > 0 {
+            let initialPoint = getLastEndPoint()
+            line = Line(color: "", thick: 0, alpha: 0, coordinates: LineCoordinates(startPoint: initialPoint, endPoint: endPoint))
+           
+        }else {
+            line = Line(color: "", thick: 0, alpha: 0, coordinates: LineCoordinates(startPoint: endPoint, endPoint: endPoint))
+            
+        }
         privateQueue.async(flags: .barrier) {
             self.lines.append(line)
         }
