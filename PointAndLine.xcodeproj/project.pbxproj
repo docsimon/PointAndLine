@@ -20,6 +20,8 @@
 		CA4C00742503E93B006B9ACE /* StorageApiProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = CA4C00732503E93B006B9ACE /* StorageApiProtocol.swift */; };
 		CA4C00762503EAD5006B9ACE /* StorageApi.swift in Sources */ = {isa = PBXBuildFile; fileRef = CA4C00752503EAD5006B9ACE /* StorageApi.swift */; };
 		CA4C007A25052644006B9ACE /* MockStorageApi.swift in Sources */ = {isa = PBXBuildFile; fileRef = CA4C007825052628006B9ACE /* MockStorageApi.swift */; };
+		CA4C007D2505664E006B9ACE /* LineViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = CA4C007C2505664E006B9ACE /* LineViewModel.swift */; };
+		CA4C007F25056660006B9ACE /* LineViewModelProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = CA4C007E25056660006B9ACE /* LineViewModelProtocol.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -50,6 +52,8 @@
 		CA4C00732503E93B006B9ACE /* StorageApiProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StorageApiProtocol.swift; sourceTree = "<group>"; };
 		CA4C00752503EAD5006B9ACE /* StorageApi.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StorageApi.swift; sourceTree = "<group>"; };
 		CA4C007825052628006B9ACE /* MockStorageApi.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MockStorageApi.swift; sourceTree = "<group>"; };
+		CA4C007C2505664E006B9ACE /* LineViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LineViewModel.swift; sourceTree = "<group>"; };
+		CA4C007E25056660006B9ACE /* LineViewModelProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LineViewModelProtocol.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -91,6 +95,7 @@
 		CA4C00492503B371006B9ACE /* PointAndLine */ = {
 			isa = PBXGroup;
 			children = (
+				CA4C007B25052BE5006B9ACE /* ViewModel */,
 				CA4C006C2503C096006B9ACE /* Model */,
 				CA4C004A2503B371006B9ACE /* AppDelegate.swift */,
 				CA4C004C2503B371006B9ACE /* SceneDelegate.swift */,
@@ -131,6 +136,15 @@
 				CA4C007825052628006B9ACE /* MockStorageApi.swift */,
 			);
 			path = Mocks;
+			sourceTree = "<group>";
+		};
+		CA4C007B25052BE5006B9ACE /* ViewModel */ = {
+			isa = PBXGroup;
+			children = (
+				CA4C007C2505664E006B9ACE /* LineViewModel.swift */,
+				CA4C007E25056660006B9ACE /* LineViewModelProtocol.swift */,
+			);
+			path = ViewModel;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -242,6 +256,8 @@
 				CA4C00722503E80B006B9ACE /* LineRepositoryProtocol.swift in Sources */,
 				CA4C00742503E93B006B9ACE /* StorageApiProtocol.swift in Sources */,
 				CA4C00702503C2DA006B9ACE /* LineRepository.swift in Sources */,
+				CA4C007F25056660006B9ACE /* LineViewModelProtocol.swift in Sources */,
+				CA4C007D2505664E006B9ACE /* LineViewModel.swift in Sources */,
 				CA4C004D2503B371006B9ACE /* SceneDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
