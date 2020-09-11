@@ -23,7 +23,7 @@ class LineRepository {
     }
     
     
-    init(storage: StorageApiProtocol){
+    init(storage: StorageApiProtocol = StorageApi()){
         self.storage = storage
     }
 }

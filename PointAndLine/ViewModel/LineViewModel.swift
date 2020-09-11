@@ -6,3 +6,22 @@
 //
 
 import Foundation
+
+class LineViewModel {
+    let model: LineRepositoryProtocol
+    weak var viewDelegate: UpdateLineProtocol?
+    
+    init(model: LineRepositoryProtocol = LineRepository()) {
+        self.model = model
+    }
+}
+
+extension LineViewModel: LineViewModelProtocol {
+    func getLineCoords(from point: Point) {
+        let line = model.getLine(from: point)
+        self.viewDelegate?.newLine(line: line)
+      
+    }
+    
+    
+}

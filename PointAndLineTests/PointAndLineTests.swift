@@ -43,4 +43,78 @@ class PointAndLineTests: XCTestCase {
         XCTAssertEqual(line2.coordinates.endPoint.x, 20)
         XCTAssertEqual(line2.coordinates.endPoint.y, 55)
     }
+    
+    func testLineViewModel_getLineCoords_initialPoint() {
+        
+        class MockView: UpdateLineProtocol {
+            func newLine(line: Line) {
+                XCTAssertEqual(line.coordinates.startPoint.x, 100)
+                XCTAssertEqual(line.coordinates.startPoint.y, 110)
+                XCTAssertEqual(line.coordinates.endPoint.x, 100)
+                XCTAssertEqual(line.coordinates.endPoint.y, 110)
+               
+            }
+        }
+        
+        let mockView = MockView()
+        let model = LineRepository()
+        let viewModel = LineViewModel(model: model)
+        viewModel.viewDelegate = mockView
+        let point1 = Point(x: 100, y: 110)
+        viewModel.getLineCoords(from: point1)
+        
+    }
+    
+    func testLineViewModel_getLineCoords_twoPoints() {
+           
+           class MockView: UpdateLineProtocol {
+               func newLine(line: Line) {
+                   XCTAssertEqual(line.coordinates.startPoint.x, 100)
+                   XCTAssertEqual(line.coordinates.startPoint.y, 110)
+                   XCTAssertEqual(line.coordinates.endPoint.x, 200)
+                   XCTAssertEqual(line.coordinates.endPoint.y, 210)
+                  
+               }
+           }
+        
+        class MockModel: LineRepositoryProtocol {
+            func getLine(from endPoint: Point) -> Line {
+                return Line(color: "", thick: 1, alpha: 1, coordinates: LineCoordinates(startPoint: Point(x: 100, y: 110), endPoint: Point(x: 200, y: 210)))
+            }
+            var getLines: [Line] = []
+            
+            func setLineColor(coord: LineCoordinates) {
+                
+            }
+            
+            func setLineThichness(coord: LineCoordinates) {
+                
+            }
+            
+            func setLineAlpha(coord: Line) {
+                
+            }
+            
+            func save(graph: [Line], result: (Result<Bool, Error>) -> Void) {
+                
+            }
+            
+            func save(line: Line, result: (Result<Bool, Error>) -> Void) {
+                
+            }
+            
+            func load() -> [Line] {
+                []
+            }
+            
+            
+        }
+           
+           let mockView = MockView()
+           let model = MockModel()
+           let viewModel = LineViewModel(model: model)
+           viewModel.viewDelegate = mockView
+           let point1 = Point(x: 200, y: 210)
+           viewModel.getLineCoords(from: point1)
+       }
 }
