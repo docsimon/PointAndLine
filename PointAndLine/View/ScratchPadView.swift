@@ -10,8 +10,7 @@ import UIKit
 class ScratchPadView: UIView {
     
     var viewModel: LineViewModelProtocol?
-    var origin: CGPoint = CGPoint()
-    var dest: CGPoint = CGPoint()
+    var lines: [(CGPoint, CGPoint)] = []
 
     required init?(coder: NSCoder) {
         super.init(coder:coder)
@@ -22,7 +21,6 @@ class ScratchPadView: UIView {
     
     @objc func handleTap(_ sender: UITapGestureRecognizer){
         if sender.state == .ended {
-            print("Tapped!!!!!!")
             let location = sender.location(in: self)
             viewModel?.getLineCoords(from: Point(x: Double(location.x), y: Double(location.y)))
             
@@ -34,11 +32,15 @@ class ScratchPadView: UIView {
         super.draw(rect)
         
         if let context = UIGraphicsGetCurrentContext() {
+            
             context.setStrokeColor(UIColor.gray.cgColor)
             context.setLineWidth(1)
-            context.move(to: self.origin)
-            context.addLine(to: self.dest)
-            context.strokePath()
+            for point in lines {
+                context.move(to: point.0)
+                context.addLine(to: point.1)
+                context.strokePath()
+            }
+           
         }
     }
     
@@ -46,12 +48,10 @@ class ScratchPadView: UIView {
 
 extension ScratchPadView: UpdateLineProtocol {
     func newLine(line: Line) {
-        print("Drawing...")
-        self.origin.x = CGFloat(line.coordinates.startPoint.x)
-        self.origin.y = CGFloat(line.coordinates.startPoint.y)
-        self.dest.x = CGFloat(line.coordinates.endPoint.x)
-        self.dest.y = CGFloat(line.coordinates.endPoint.y)
-      
+
+        let point1 = CGPoint(x: Int(line.coordinates.startPoint.x), y: Int(line.coordinates.startPoint.y))
+        let point2 = CGPoint(x: Int(line.coordinates.endPoint.x), y: Int(line.coordinates.endPoint.y))
+        lines.append((point1, point2))
         setNeedsDisplay()
     }
   
