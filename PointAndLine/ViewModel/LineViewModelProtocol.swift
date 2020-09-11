@@ -9,8 +9,10 @@ import Foundation
 
 protocol LineViewModelProtocol {
     func getLineCoords(from point: Point)
+    var delegate: UpdateLineProtocol? {get set}
 }
 
 protocol UpdateLineProtocol: class {
     func newLine(line: Line)
+
 }

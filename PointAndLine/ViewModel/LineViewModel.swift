@@ -17,11 +17,19 @@ class LineViewModel {
 }
 
 extension LineViewModel: LineViewModelProtocol {
-    func getLineCoords(from point: Point) {
-        let line = model.getLine(from: point)
-        self.viewDelegate?.newLine(line: line)
-      
+    
+    var delegate: UpdateLineProtocol? {
+        get {
+            return self.viewDelegate
+        }
+        set {
+            self.viewDelegate = newValue
+        }
     }
     
+    func getLineCoords(from point: Point) {
+        let line = model.getLine(from: point)
+        self.viewDelegate!.newLine(line: line)
+    }
     
 }

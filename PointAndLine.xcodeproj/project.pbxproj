@@ -22,6 +22,7 @@
 		CA4C007A25052644006B9ACE /* MockStorageApi.swift in Sources */ = {isa = PBXBuildFile; fileRef = CA4C007825052628006B9ACE /* MockStorageApi.swift */; };
 		CA4C007D2505664E006B9ACE /* LineViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = CA4C007C2505664E006B9ACE /* LineViewModel.swift */; };
 		CA4C007F25056660006B9ACE /* LineViewModelProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = CA4C007E25056660006B9ACE /* LineViewModelProtocol.swift */; };
+		CA4C0082250BCB12006B9ACE /* ScratchPadView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CA4C0081250BCB12006B9ACE /* ScratchPadView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -54,6 +55,7 @@
 		CA4C007825052628006B9ACE /* MockStorageApi.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MockStorageApi.swift; sourceTree = "<group>"; };
 		CA4C007C2505664E006B9ACE /* LineViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LineViewModel.swift; sourceTree = "<group>"; };
 		CA4C007E25056660006B9ACE /* LineViewModelProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LineViewModelProtocol.swift; sourceTree = "<group>"; };
+		CA4C0081250BCB12006B9ACE /* ScratchPadView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScratchPadView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -95,13 +97,12 @@
 		CA4C00492503B371006B9ACE /* PointAndLine */ = {
 			isa = PBXGroup;
 			children = (
+				CA4C0080250BC9FF006B9ACE /* View */,
 				CA4C007B25052BE5006B9ACE /* ViewModel */,
 				CA4C006C2503C096006B9ACE /* Model */,
 				CA4C004A2503B371006B9ACE /* AppDelegate.swift */,
-				CA4C004C2503B371006B9ACE /* SceneDelegate.swift */,
-				CA4C004E2503B371006B9ACE /* ViewController.swift */,
-				CA4C00502503B371006B9ACE /* Main.storyboard */,
 				CA4C00532503B373006B9ACE /* Assets.xcassets */,
+				CA4C00502503B371006B9ACE /* Main.storyboard */,
 				CA4C00552503B373006B9ACE /* LaunchScreen.storyboard */,
 				CA4C00582503B373006B9ACE /* Info.plist */,
 			);
@@ -145,6 +146,16 @@
 				CA4C007E25056660006B9ACE /* LineViewModelProtocol.swift */,
 			);
 			path = ViewModel;
+			sourceTree = "<group>";
+		};
+		CA4C0080250BC9FF006B9ACE /* View */ = {
+			isa = PBXGroup;
+			children = (
+				CA4C004C2503B371006B9ACE /* SceneDelegate.swift */,
+				CA4C004E2503B371006B9ACE /* ViewController.swift */,
+				CA4C0081250BCB12006B9ACE /* ScratchPadView.swift */,
+			);
+			path = View;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -259,6 +270,7 @@
 				CA4C007F25056660006B9ACE /* LineViewModelProtocol.swift in Sources */,
 				CA4C007D2505664E006B9ACE /* LineViewModel.swift in Sources */,
 				CA4C004D2503B371006B9ACE /* SceneDelegate.swift in Sources */,
+				CA4C0082250BCB12006B9ACE /* ScratchPadView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
