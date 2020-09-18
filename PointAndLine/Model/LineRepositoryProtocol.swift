@@ -10,9 +10,7 @@ import Foundation
 protocol LineRepositoryProtocol {
     func getLine(from endPoint: Point) -> Line
     var getLines: [Line] {get}
-    func setLineColor(coord: LineCoordinates)
-    func setLineThichness(coord: LineCoordinates)
-    func setLineAlpha(coord: Line)
+    func setLine(color: String?, stroke: Int?, alpha: Double?, isVisible: Bool?)
     func save(graph: [Line], result: (Result<Bool, Error>) -> Void)
     func save(line: Line, result: (Result<Bool, Error>) -> Void)
     func load() -> [Line]

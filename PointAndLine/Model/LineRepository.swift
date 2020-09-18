@@ -29,14 +29,18 @@ class LineRepository {
 }
 
 extension LineRepository: LineRepositoryProtocol {
+    func setLine(color: String?, stroke: Int?, alpha: Double?, isVisible: Bool?) {
+        
+    }
+    
     func getLine(from endPoint: Point) -> Line {
         let line: Line
         if getLines.count > 0 {
             let initialPoint = getLastEndPoint()
-            line = Line(color: "", thick: 0, alpha: 0, coordinates: LineCoordinates(startPoint: initialPoint, endPoint: endPoint))
+            line = Line(color: "", stroke: 0, alpha: 0, coordinates: LineCoordinates(startPoint: initialPoint, endPoint: endPoint), isVisible: true)
            
         }else {
-            line = Line(color: "", thick: 0, alpha: 0, coordinates: LineCoordinates(startPoint: endPoint, endPoint: endPoint))
+            line = Line(color: "", stroke: 0, alpha: 0, coordinates: LineCoordinates(startPoint: endPoint, endPoint: endPoint), isVisible: true)
             
         }
         privateQueue.async(flags: .barrier) {
@@ -51,17 +55,6 @@ extension LineRepository: LineRepositoryProtocol {
         }
     }
     
-    func setLineColor(coord: LineCoordinates) {
-        
-    }
-    
-    func setLineThichness(coord: LineCoordinates) {
-        
-    }
-    
-    func setLineAlpha(coord: Line) {
-        
-    }
     
     func save(graph: [Line], result: (Result<Bool, Error>) -> Void) {
         

@@ -38,11 +38,13 @@ class ScratchPadView: UIView {
                 return
             }
             for line in lines {
-                let point1 = CGPoint(x: Int(line.coordinates.startPoint.x), y: Int(line.coordinates.startPoint.y))
-                let point2 = CGPoint(x: Int(line.coordinates.endPoint.x), y: Int(line.coordinates.endPoint.y))
-                context.move(to: point1)
-                context.addLine(to: point2)
-                context.strokePath()
+                if line.isVisible {
+                    let point1 = CGPoint(x: Int(line.coordinates.startPoint.x), y: Int(line.coordinates.startPoint.y))
+                    let point2 = CGPoint(x: Int(line.coordinates.endPoint.x), y: Int(line.coordinates.endPoint.y))
+                    context.move(to: point1)
+                    context.addLine(to: point2)
+                    context.strokePath()
+                }
             }
            
         }

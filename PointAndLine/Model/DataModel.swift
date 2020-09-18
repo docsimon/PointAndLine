@@ -19,7 +19,8 @@ struct LineCoordinates {
 
 struct Line {
     let color: String
-    let thick: Int
+    let stroke: Int
     let alpha: Double
     let coordinates: LineCoordinates
+    let isVisible: Bool
 }
