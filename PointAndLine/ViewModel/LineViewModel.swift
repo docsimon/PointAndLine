@@ -31,8 +31,8 @@ extension LineViewModel: LineViewModelProtocol {
         }
     }
     
-    func getLineCoords(from point: Point) {
-        let _ = model.getLine(from: point)
+    func setLine(from point: Point, isVisible: Bool = true) {
+        let _ = model.setLine(from: point, isVisible: isVisible)
         self.delegate?.updateDraw()
     }
     

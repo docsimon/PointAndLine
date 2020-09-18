@@ -22,5 +22,5 @@ struct Line {
     let stroke: Int
     let alpha: Double
     let coordinates: LineCoordinates
-    let isVisible: Bool
+    var isVisible: Bool
 }

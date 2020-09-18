@@ -8,10 +8,7 @@
 import Foundation
 
 protocol LineRepositoryProtocol {
-    func getLine(from endPoint: Point) -> Line
+    func setLine(from endPoint: Point, isVisible: Bool) -> Line
     var getLines: [Line] {get}
-    func setLine(color: String?, stroke: Int?, alpha: Double?, isVisible: Bool?)
-    func save(graph: [Line], result: (Result<Bool, Error>) -> Void)
-    func save(line: Line, result: (Result<Bool, Error>) -> Void)
-    func load() -> [Line]
+    func undo()
 }

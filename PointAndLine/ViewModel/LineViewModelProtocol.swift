@@ -8,7 +8,7 @@
 import Foundation
 
 protocol LineViewModelProtocol {
-    func getLineCoords(from point: Point)
+    func setLine(from point: Point, isVisible: Bool)
     var allLines: [Line] {get}
     var delegate: UpdateLineProtocol? {get set}
 }

@@ -21,7 +21,7 @@ class ScratchPadView: UIView {
     @objc func handleTap(_ sender: UITapGestureRecognizer){
         if sender.state == .ended {
             let location = sender.location(in: self)
-            viewModel?.getLineCoords(from: Point(x: Double(location.x), y: Double(location.y)))
+            viewModel?.setLine(from: Point(x: Double(location.x), y: Double(location.y)), isVisible: true)
             
         }
     }

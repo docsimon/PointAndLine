@@ -29,18 +29,23 @@ class LineRepository {
 }
 
 extension LineRepository: LineRepositoryProtocol {
-    func setLine(color: String?, stroke: Int?, alpha: Double?, isVisible: Bool?) {
+    func undo() {
+        guard let lastLine = lines.popLast() else {
+            return
+        }
+
+        let _ =  setLine(from: lastLine.coordinates.startPoint, isVisible: !lastLine.isVisible)
         
     }
     
-    func getLine(from endPoint: Point) -> Line {
+    func setLine(from endPoint: Point, isVisible: Bool = true) -> Line {
         let line: Line
         if getLines.count > 0 {
             let initialPoint = getLastEndPoint()
-            line = Line(color: "", stroke: 0, alpha: 0, coordinates: LineCoordinates(startPoint: initialPoint, endPoint: endPoint), isVisible: true)
+            line = Line(color: "", stroke: 0, alpha: 0, coordinates: LineCoordinates(startPoint: initialPoint, endPoint: endPoint), isVisible: isVisible)
            
         }else {
-            line = Line(color: "", stroke: 0, alpha: 0, coordinates: LineCoordinates(startPoint: endPoint, endPoint: endPoint), isVisible: true)
+            line = Line(color: "", stroke: 0, alpha: 0, coordinates: LineCoordinates(startPoint: endPoint, endPoint: endPoint), isVisible: isVisible)
             
         }
         privateQueue.async(flags: .barrier) {
@@ -54,19 +59,5 @@ extension LineRepository: LineRepositoryProtocol {
             self.lines
         }
     }
-    
-    
-    func save(graph: [Line], result: (Result<Bool, Error>) -> Void) {
-        
-    }
-    
-    func save(line: Line, result: (Result<Bool, Error>) -> Void) {
-        
-    }
-    
-    func load() -> [Line] {
-        []
-    }
-    
     
 }
