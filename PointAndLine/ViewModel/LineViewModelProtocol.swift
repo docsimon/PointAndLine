@@ -9,6 +9,7 @@ import Foundation
 
 protocol LineViewModelProtocol {
     func setLine(from point: Point, isVisible: Bool)
+    func undo()
     var allLines: [Line] {get}
     var delegate: UpdateLineProtocol? {get set}
 }

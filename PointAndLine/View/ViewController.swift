@@ -9,6 +9,12 @@ import UIKit
 
 class ViewController: UIViewController {
 
+    @IBAction func redo(_ sender: Any) {
+        self.undo()
+    }
+    @IBAction func undo(_ sender: Any) {
+        self.undo()
+    }
     @IBOutlet weak var scratchPad: ScratchPadView!
     var viewModel: LineViewModelProtocol?
     
@@ -19,6 +25,10 @@ class ViewController: UIViewController {
         scratchPad.viewModel = viewModel
         
     }
-
+    
+    func undo() {
+        viewModel?.undo()
+    }
+    
 }
 

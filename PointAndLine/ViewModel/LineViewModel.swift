@@ -36,4 +36,9 @@ extension LineViewModel: LineViewModelProtocol {
         self.delegate?.updateDraw()
     }
     
+    func undo() {
+        model.undo()
+        self.delegate?.updateDraw()
+    }
+    
 }
