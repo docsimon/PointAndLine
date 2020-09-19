@@ -12,7 +12,14 @@ class LineRepository {
     let storage: StorageApiProtocol
     let privateQueue = DispatchQueue(label: "Private queue", attributes: .concurrent)
     
-    private var lines = [Line]()
+    private var lines = [Line]() {
+        didSet {
+            
+        }
+        willSet {
+            
+        }
+    }
     
     private func getLastEndPoint() -> Point {
         privateQueue.sync {
@@ -29,16 +36,19 @@ class LineRepository {
 }
 
 extension LineRepository: LineRepositoryProtocol {
-    func undo() {
+   
+    func undo(completion: @escaping () -> ()) {
         guard let lastLine = lines.popLast() else {
             return
         }
 
-        let _ =  setLine(from: lastLine.coordinates.startPoint, isVisible: !lastLine.isVisible)
+        setLine(from: lastLine.coordinates.startPoint, isVisible: !lastLine.isVisible) {
+            completion()
+        }
         
     }
     
-    func setLine(from endPoint: Point, isVisible: Bool = true) -> Line {
+    func setLine(from endPoint: Point, isVisible: Bool, completion: @escaping () -> Void) {
         let line: Line
         if getLines.count > 0 {
             let initialPoint = getLastEndPoint()
@@ -50,8 +60,9 @@ extension LineRepository: LineRepositoryProtocol {
         }
         privateQueue.async(flags: .barrier) {
             self.lines.append(line)
+            completion()
         }
-        return line
+       
     }
     
     var getLines: [Line] {

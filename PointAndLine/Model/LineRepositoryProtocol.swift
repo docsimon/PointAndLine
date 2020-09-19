@@ -8,7 +8,7 @@
 import Foundation
 
 protocol LineRepositoryProtocol {
-    func setLine(from endPoint: Point, isVisible: Bool) -> Line
+    func setLine(from endPoint: Point, isVisible: Bool, completion: @escaping () -> ())
     var getLines: [Line] {get}
-    func undo()
+    func undo(completion: @escaping () -> ())
 }

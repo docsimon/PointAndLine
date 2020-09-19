@@ -54,7 +54,9 @@ class ScratchPadView: UIView {
 
 extension ScratchPadView: UpdateLineProtocol {
     func updateDraw() {
-        setNeedsDisplay()
+        DispatchQueue.main.async {
+            self.setNeedsDisplay()
+        }
     }
     
 }

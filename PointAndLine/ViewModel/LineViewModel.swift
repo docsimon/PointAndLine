@@ -32,13 +32,18 @@ extension LineViewModel: LineViewModelProtocol {
     }
     
     func setLine(from point: Point, isVisible: Bool = true) {
-        let _ = model.setLine(from: point, isVisible: isVisible)
-        self.delegate?.updateDraw()
+        model.setLine(from: point, isVisible: isVisible) {[weak self] in
+            guard let self = self else {
+                return
+            }
+            self.delegate?.updateDraw()
+        }
     }
     
     func undo() {
-        model.undo()
-        self.delegate?.updateDraw()
+        model.undo {
+            self.delegate?.updateDraw()
+        }
     }
     
 }
